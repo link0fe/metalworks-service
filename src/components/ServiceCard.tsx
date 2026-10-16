@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type ServiceCardProps = {
     title: string;
@@ -8,7 +9,10 @@ type ServiceCardProps = {
 
 export default function ServiceCard({title, description, imageUrl}: ServiceCardProps) {
     return (
-        <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 hover:border-orange-500 transition-colors">
+        <Link
+            href="#" 
+            className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 hover:border-orange-500 transition-colors"
+        >
             <h3 className="text-xl font-semibold mb-2">{title}</h3>
             <p className="text-zinc-300">{description}</p>
             {imageUrl && (
@@ -20,6 +24,6 @@ export default function ServiceCard({title, description, imageUrl}: ServiceCardP
                     className="mt-4 w-full h-auto rounded-lg"
                 />
             )}
-        </div>
+        </Link>
     )
 }
