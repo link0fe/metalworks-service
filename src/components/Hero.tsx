@@ -9,7 +9,9 @@ export default function Hero() {
                     - СВАРОЧНЫЕ РАБОТЫ В ЛАТВИИ
                 </p>
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-                    Надёжные металлоконструкции. Качественная сварка.
+                    Надёжные металлоконструкции.
+                    <br/>
+                    Качественная сварка. 
                 </h1>
                 <p className="text-lg text-zinc-300">
                     Изготовление, сварка и монтаж металлических конструкций для частных и корпоративных заказчиков.
@@ -32,7 +34,7 @@ export default function Hero() {
                         href="/projects"
                         className="px-6 py-3 bg-zinc-800 text-zinc-50 rounded-md hover:bg-zinc-700 transition-colors"
                     >
-                        Наши работы →
+                        Мои Проекты →
                     </Link>
                 </div>
             </div>
