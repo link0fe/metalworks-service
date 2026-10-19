@@ -31,7 +31,7 @@ export default function Hero() {
                         Обсудить проект
                     </Link>
                     <Link
-                        href="/projects"
+                        href="/services"
                         className="px-6 py-3 bg-zinc-800 text-zinc-50 rounded-md hover:bg-zinc-700 transition-colors"
                     >
                         Мои Проекты →

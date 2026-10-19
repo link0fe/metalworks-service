@@ -46,6 +46,7 @@ export default function ServicesPreview() {
                             title={card.title} 
                             description={card.description}
                             imageUrl={card.imageUrl}
+                            href={card.href}
                         />
                     ))}
                 </div>
