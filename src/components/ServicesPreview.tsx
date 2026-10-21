@@ -33,7 +33,7 @@ const cardData: Service[] = [
 ];
 
 export default function ServicesPreview() {
-
+    // need to add a section with a title and a grid of ServiceCard components, using the cardData array to populate the cards
     return (
         <section className="bg-zinc-950 text-white py-20 px-4">
             <div className="max-w-6xl mx-auto">

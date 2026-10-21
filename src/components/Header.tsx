@@ -4,7 +4,6 @@ import { useState } from "react";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
-
     return (
         <header className="bg-zinc-800 text-zinc-50 py-4">
             <div className="flex items-center justify-between container mx-auto px-4 ">
