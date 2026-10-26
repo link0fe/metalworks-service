@@ -1,36 +1,6 @@
 import ServiceCard from "./ServiceCard";
+import { cardData } from "../data/services";
 
-type Service = {
-    id: number;
-    title: string;
-    description: string;
-    imageUrl?: string;
-    href: string;
-};
-
-const cardData: Service[] = [ 
-    {
-        id: 1,
-        title: "Изготовление металлоконструкций",
-        description: "Проектирование и изготовление металлических конструкций любой сложности.",
-        imageUrl: "/metalworks.jpg",
-        href: "/services/metal-structures"
-    },
-    {
-        id: 2,
-        title: "Сварочные работы",
-        description: "Качественная сварка металлических конструкций.",
-        imageUrl: "/welding.jpg",
-        href: "/services/welding"
-    },
-    {
-        id: 3,
-        title: "Монтаж металлоконструкций",
-        description: "Профессиональный монтаж металлических конструкций на объекте.",
-        // imageUrl: "/services/installation.jpg",
-        href: "/services/installation"
-    },
-];
 
 export default function ServicesPreview() {
     // need to add a section with a title and a grid of ServiceCard components, using the cardData array to populate the cards
@@ -42,11 +12,11 @@ export default function ServicesPreview() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                     {cardData.map((card) => (
                         <ServiceCard 
-                            key={card.id} 
+                            key={card.slug} 
                             title={card.title} 
                             description={card.description}
                             imageUrl={card.imageUrl}
-                            href={card.href}
+                            href={`/services/${card.slug}`}
                         />
                     ))}
                 </div>
