@@ -26,6 +26,7 @@ export async function submitContactForm(previousState: ContactFormState | undefi
     }   
     
     console.log("Contact Form Submission:", { name, contact, description });
+    // Need to implement actual submission logic here (e.g., send an email, save to database, etc.)
 
     return {
         success: true,
