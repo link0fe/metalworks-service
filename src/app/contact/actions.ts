@@ -5,16 +5,18 @@ export type ContactFormState = {
     message: string;
 };
 
-export async function submitContactForm(previousState: ContactFormState | undefined, data: FormData): Promise<ContactFormState> {
+export async function submitContactForm(_previousState: ContactFormState, data: FormData): Promise<ContactFormState> {
     const rawName = data.get("name");
-    const rawContact = data.get("contact");
+    const rawEmail = data.get("email");
+    const rawPhone = data.get("phone");
     const rawDescription = data.get("description");
     
     const name = typeof rawName === "string" ? rawName.trim() : "";
-    const contact = typeof rawContact === "string" ? rawContact.trim() : "";
+    const email = typeof rawEmail === "string" ? rawEmail.trim() : "";
+    const phone = typeof rawPhone === "string" ? rawPhone.trim() : "";
     const description = typeof rawDescription === "string" ? rawDescription.trim() : "";
     
-    if (!name || !contact || !description) {
+    if (!name || !email || !phone || !description) {
         return { success: false, message: "Пожалуйста, заполните все поля." };
     }
 
@@ -24,9 +26,6 @@ export async function submitContactForm(previousState: ContactFormState | undefi
             message: "Описание не должно превышать 2000 символов.",
         };
     }   
-    
-    console.log("Contact Form Submission:", { name, contact, description });
-    // Need to implement actual submission logic here (e.g., send an email, save to database, etc.)
 
     return {
         success: true,
