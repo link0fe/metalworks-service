@@ -20,6 +20,24 @@ export async function submitContactForm(_previousState: ContactFormState, data: 
         return { success: false, message: "Пожалуйста, заполните все поля." };
     }
 
+    if (name.length > 100 ) {
+        return { success: false, message: "Имя не должно превышать 100 символов." };
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\+?\d+$/;
+
+    const cleanedPhone = phone.replace(/[\s-]/g, "");
+    const digitsOnly = cleanedPhone.replace(/\D/g, "");
+    
+    if(!phoneRegex.test(cleanedPhone) || digitsOnly.length < 8 || digitsOnly.length > 15) { 
+        return { success: false, message: "Пожалуйста, введите корректный номер телефона." };
+    }
+
+    if(email && !emailRegex.test(email)) {
+        return { success: false, message: "Пожалуйста, введите корректный email." };
+    }
+    
     if (description.length > 2000) {
         return {
             success: false,

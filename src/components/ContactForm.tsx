@@ -16,7 +16,8 @@ export default function ContactForm() {
         if (state.success) {
             formRef.current?.reset();
         }
-    }, [state]);
+    }, [state.success]);
+
 
     return (
         <form 
